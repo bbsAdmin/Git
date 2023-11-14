@@ -1,0 +1,7 @@
+Screen3 As screen:
+    LoadingSpinnerColor: =RGBA(98, 100, 167, 1)
+
+    Component1_3 As Component1:
+        Screen2: =Screen2
+        Width: =Parent.Width
+

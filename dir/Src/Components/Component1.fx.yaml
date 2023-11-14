@@ -1,0 +1,53 @@
+Component1 As CanvasComponent:
+    Fill: =RGBA(214, 214, 221, 1)
+    Height: =100
+    Width: =640
+    X: =0
+    Y: =0
+    ZIndex: =1
+
+    Button7 As ボタン:
+        Alignment: =Align.Center
+        BorderColor: =
+        DisabledBorderColor: =
+        DisabledFillColor: =
+        DisabledTextColor: =
+        DisplayMode: =DisplayMode.Edit
+        FillColor: =
+        Height: =32
+        HoverBorderColor: =
+        HoverFillColor: =
+        HoverTextColor: =
+        OnSelect: =Navigate(Component1.Screen2)
+        PCFTeamsTheme: ="default"
+        PressedBorderColor: =
+        PressedFillColor: =
+        PressedTextColor: =
+        TextColor: =
+        Width: =Parent.Width*0.2
+        X: =Parent.Width*0.2
+        Y: =30
+        ZIndex: =4
+
+    Button7_1 As ボタン:
+        BorderColor: =
+        DisabledBorderColor: =
+        DisabledFillColor: =
+        DisabledTextColor: =
+        DisplayMode: =DisplayMode.Edit
+        FillColor: =
+        Height: =32
+        HoverBorderColor: =
+        HoverFillColor: =
+        HoverTextColor: =
+        OnSelect: =Navigate(Component1.Screen2)
+        PCFTeamsTheme: ="default"
+        PressedBorderColor: =
+        PressedFillColor: =
+        PressedTextColor: =
+        TextColor: =
+        Width: =Parent.Width*0.2
+        X: =Parent.Width*0.6
+        Y: =30
+        ZIndex: =5
+

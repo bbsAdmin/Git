@@ -1,0 +1,56 @@
+{
+  "b9f4f0f8-6db9-44ba-8c8e-67b25e612802": {
+    "appActions": [
+      "Run"
+    ],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "ロジック フロー",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1664/1.0.1664.3477/logicflows/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
+      "parameterHints": {
+        "workflowEntityId": {
+          "value": "fd34a831-8f6d-ee11-9ae7-6045bd648516"
+        },
+        "workflowName": {
+          "value": "04600708-065a-df44-541b-29661728de73"
+        }
+      },
+      "parameterHintsV2": {
+        "workflowEntityId": {
+          "value": "fd34a831-8f6d-ee11-9ae7-6045bd648516"
+        },
+        "workflowName": {
+          "value": "04600708-065a-df44-541b-29661728de73"
+        }
+      }
+    },
+    "datasets": {},
+    "dataSources": [
+      "中間ファイル生成_親フロー"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "b9f4f0f8-6db9-44ba-8c8e-67b25e612802"
+  },
+  "d31ed446-3223-4390-998d-27d4aaa0135a": {
+    "appActions": [
+      "MyProfile_V2"
+    ],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Office 365 ユーザー",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1664/1.0.1664.3477/office365users/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_office365users",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {},
+    "dataSources": [
+      "Office365ユーザー"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "d31ed446-3223-4390-998d-27d4aaa0135a"
+  }
+}

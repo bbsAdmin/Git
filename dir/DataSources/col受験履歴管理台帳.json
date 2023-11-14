@@ -1,0 +1,9 @@
+[
+  {
+    "IsComponentScoped": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "Name": "col受験履歴管理台帳",
+    "Type": "CollectionDataSourceInfo"
+  }
+]

@@ -1,0 +1,9 @@
+[
+  {
+    "IsComponentScoped": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "Name": "col実務経験紐づけ台帳_受験履歴IDで絞り込み",
+    "Type": "CollectionDataSourceInfo"
+  }
+]

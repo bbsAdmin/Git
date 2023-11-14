@@ -1,0 +1,95 @@
+[
+  {
+    "DisplayName": "従業員情報 (ビュー)",
+    "Name": "_crf5c_jugyoinjoho_views",
+    "RelatedEntityName": "従業員情報",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "0a53a03e-3750-491d-8e7d-6b81b63baf0b": "従業員情報関連ビュー",
+      "5133c395-da28-40f6-8f3b-f3029a2822e3": "非アクティブな従業員情報",
+      "69b9c676-f712-42a7-bdac-760e6161c23a": "従業員情報の高度な検索ビュー",
+      "a6ec8b04-fb21-49e7-bb29-97aba99306af": "アクティブな従業員情報",
+      "d4588f0c-c08c-4812-96c8-6a53aa63049f": "従業員情報検索ダイアログ ビュー"
+    }
+  },
+  {
+    "DisplayName": "状態 (従業員情報)",
+    "Name": "crf5c_jugyoinjoho_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "アクティブ",
+      "1": "非アクティブ"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "従業員情報"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "従業員情報",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "ステータス (従業員情報)",
+    "Name": "crf5c_jugyoinjoho_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "アクティブ",
+      "2": "非アクティブ"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "従業員情報"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "従業員情報",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "crf5c_jugyoinjohos",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "crf5c_jugyoinjoho",
+    "MaxGetRowsCount": 500,
+    "Name": "従業員情報",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "所有者",
+      "createdby": "作成者",
+      "createdon": "作成日",
+      "createdonbehalfby": "作成者 (代理)",
+      "crf5c_jugyoinjoho_AsyncOperations": "システム ジョブ ",
+      "crf5c_jugyoinjoho_BulkDeleteFailures": "一括削除の失敗 ",
+      "crf5c_jugyoinjoho_PrincipalObjectAttributeAccesses": "フィールド共有 ",
+      "crf5c_jugyoinjoho_ProcessSession": "プロセス セッション",
+      "crf5c_jugyoinjohoid": "従業員情報",
+      "crf5c_jugyoinno": "従業員No.",
+      "crf5c_mail": "メールアドレス",
+      "crf5c_name": "Name",
+      "importsequencenumber": "インポート シーケンス番号",
+      "modifiedby": "修正者",
+      "modifiedon": "修正日",
+      "modifiedonbehalfby": "修正者 (代理)",
+      "overriddencreatedon": "レコード作成日",
+      "owningbusinessunit": "所属部署",
+      "owningteam": "所有チーム",
+      "owninguser": "所有ユーザー",
+      "statecode": "状態",
+      "statuscode": "ステータス",
+      "timezoneruleversionnumber": "タイム ゾーン規則のバージョン番号",
+      "utcconversiontimezonecode": "UTC 変換タイム ゾーン コード",
+      "versionnumber": "バージョン番号"
+    },
+    "PreferredName": "従業員情報",
+    "Type": "NativeCDSDataSourceInfo"
+  }
+]

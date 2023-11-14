@@ -1,0 +1,98 @@
+[
+  {
+    "DisplayName": "実務経験紐づけ台帳 (ビュー)",
+    "Name": "_crf5c_jitsumukeikenhimodukedaicho_views",
+    "RelatedEntityName": "実務経験紐づけ台帳",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "1771cd3d-3021-4ed7-bf54-6c009309e788": "実務経験紐づけ台帳検索ダイアログ ビュー",
+      "63295b87-4599-4f76-8760-528e53ba4bb8": "実務経験紐づけ台帳の高度な検索ビュー",
+      "b00651b1-0f28-4d7f-a361-982e04d429eb": "実務経験紐づけ台帳関連ビュー",
+      "b18bdd48-106a-4351-9164-80798121549b": "アクティブな実務経験紐づけ台帳",
+      "b65dbf96-9f01-4c01-a08d-f89b774f610d": "非アクティブな実務経験紐づけ台帳"
+    }
+  },
+  {
+    "DisplayName": "状態 (実務経験紐づけ台帳)",
+    "Name": "crf5c_jitsumukeikenhimodukedaicho_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "アクティブ",
+      "1": "非アクティブ"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "実務経験紐づけ台帳"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "実務経験紐づけ台帳",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "ステータス (実務経験紐づけ台帳)",
+    "Name": "crf5c_jitsumukeikenhimodukedaicho_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "アクティブ",
+      "2": "非アクティブ"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "実務経験紐づけ台帳"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "実務経験紐づけ台帳",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "crf5c_jitsumukeikenhimodukedaichos",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "crf5c_jitsumukeikenhimodukedaicho",
+    "MaxGetRowsCount": 500,
+    "Name": "実務経験紐づけ台帳",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "所有者",
+      "createdby": "作成者",
+      "createdon": "作成日",
+      "createdonbehalfby": "作成者 (代理)",
+      "crf5c_careerid": "キャリアID",
+      "crf5c_jitsumukeikenhimodukedaicho_AsyncOperations": "システム ジョブ ",
+      "crf5c_jitsumukeikenhimodukedaicho_BulkDeleteFailures": "一括削除の失敗 ",
+      "crf5c_jitsumukeikenhimodukedaicho_PrincipalObjectAttributeAccesses": "フィールド共有 ",
+      "crf5c_jitsumukeikenhimodukedaicho_ProcessSession": "プロセス セッション",
+      "crf5c_jitsumukeikenhimodukedaichoid": "実務経験紐づけ台帳",
+      "crf5c_jugyoinno": "従業員No",
+      "crf5c_jukenrirekiid": "受験履歴ID",
+      "crf5c_name": "Name",
+      "crf5c_shikakucode": "資格コード",
+      "crf5c_shoninflg": "承認フラグ",
+      "importsequencenumber": "インポート シーケンス番号",
+      "modifiedby": "修正者",
+      "modifiedon": "修正日",
+      "modifiedonbehalfby": "修正者 (代理)",
+      "overriddencreatedon": "レコード作成日",
+      "owningbusinessunit": "所属部署",
+      "owningteam": "所有チーム",
+      "owninguser": "所有ユーザー",
+      "statecode": "状態",
+      "statuscode": "ステータス",
+      "timezoneruleversionnumber": "タイム ゾーン規則のバージョン番号",
+      "utcconversiontimezonecode": "UTC 変換タイム ゾーン コード",
+      "versionnumber": "バージョン番号"
+    },
+    "PreferredName": "実務経験紐づけ台帳",
+    "Type": "NativeCDSDataSourceInfo"
+  }
+]

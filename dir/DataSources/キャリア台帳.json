@@ -1,0 +1,96 @@
+[
+  {
+    "DisplayName": "キャリア台帳 (ビュー)",
+    "Name": "_crf5c_careerdaicho_views",
+    "RelatedEntityName": "キャリア台帳",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "044bcbfd-1712-43c6-8e61-be5c3cea09c1": "キャリア台帳の高度な検索ビュー",
+      "361cb690-d31b-4049-b8a4-1f607aa8c341": "キャリア台帳関連ビュー",
+      "6cbd74b6-f53e-41a2-8309-854489905c7a": "非アクティブなキャリア台帳",
+      "a18f164b-933e-4408-8fa0-a3b57b8c5eb3": "キャリア台帳検索ダイアログ ビュー",
+      "e7af2ade-2212-4568-a1e7-d720a331ddaf": "アクティブなキャリア台帳"
+    }
+  },
+  {
+    "DisplayName": "状態 (キャリア台帳)",
+    "Name": "crf5c_careerdaicho_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "アクティブ",
+      "1": "非アクティブ"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "キャリア台帳"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "キャリア台帳",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "ステータス (キャリア台帳)",
+    "Name": "crf5c_careerdaicho_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "アクティブ",
+      "2": "非アクティブ"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "キャリア台帳"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "キャリア台帳",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "crf5c_careerdaichos",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "crf5c_careerdaicho",
+    "MaxGetRowsCount": 500,
+    "Name": "キャリア台帳",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "所有者",
+      "createdby": "作成者",
+      "createdon": "作成日",
+      "createdonbehalfby": "作成者 (代理)",
+      "crf5c_careerdaicho_AsyncOperations": "システム ジョブ ",
+      "crf5c_careerdaicho_BulkDeleteFailures": "一括削除の失敗 ",
+      "crf5c_careerdaicho_PrincipalObjectAttributeAccesses": "フィールド共有 ",
+      "crf5c_careerdaicho_ProcessSession": "プロセス セッション",
+      "crf5c_careerdaichoid": "キャリア台帳",
+      "crf5c_careerid": "キャリアID",
+      "crf5c_jugyoinid": "従業員No",
+      "crf5c_kenmeino": "件名番号",
+      "crf5c_name": "Name",
+      "importsequencenumber": "インポート シーケンス番号",
+      "modifiedby": "修正者",
+      "modifiedon": "修正日",
+      "modifiedonbehalfby": "修正者 (代理)",
+      "overriddencreatedon": "レコード作成日",
+      "owningbusinessunit": "所属部署",
+      "owningteam": "所有チーム",
+      "owninguser": "所有ユーザー",
+      "statecode": "状態",
+      "statuscode": "ステータス",
+      "timezoneruleversionnumber": "タイム ゾーン規則のバージョン番号",
+      "utcconversiontimezonecode": "UTC 変換タイム ゾーン コード",
+      "versionnumber": "バージョン番号"
+    },
+    "PreferredName": "キャリア台帳",
+    "Type": "NativeCDSDataSourceInfo"
+  }
+]

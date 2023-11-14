@@ -1,0 +1,60 @@
+{
+  "QualifiedValues": [
+    {
+      "Kind": "default.cds_crf5c_careerdaicho_forms",
+      "Namespace": "キャリア台帳 (フォーム)",
+      "Values": {
+        "情報": "8a5ddaf7-ae51-4ee4-ac97-b6e7874a9f08"
+      }
+    },
+    {
+      "Kind": "default.cds_crf5c_jitsumukeikenhimodukedaicho_forms",
+      "Namespace": "実務経験紐づけ台帳 (フォーム)",
+      "Values": {
+        "情報": "1d9e3f73-5ab0-4136-b1c4-d30415a03b72"
+      }
+    },
+    {
+      "Kind": "default.cds_crf5c_jukenrirekikanridaicho_forms",
+      "Namespace": "受験履歴管理台帳 (フォーム)",
+      "Values": {
+        "情報": "2aae9c74-a483-4fdf-93b1-b79eefb028b8"
+      }
+    },
+    {
+      "Kind": "default.cds_crf5c_jugyoinjoho_forms",
+      "Namespace": "従業員情報 (フォーム)",
+      "Values": {
+        "情報": "962c7781-7ddf-4759-b4e3-f035e558f94c"
+      }
+    },
+    {
+      "Kind": "default.cds_crf5c_kojijoho_forms",
+      "Namespace": "工事情報 (フォーム)",
+      "Values": {
+        "情報": "0679cda0-e1ba-4701-a60a-d7ec69f35278"
+      }
+    },
+    {
+      "Kind": "default.cds_crf5c_shikaku_forms",
+      "Namespace": "資格 (フォーム)",
+      "Values": {
+        "情報": "1888188c-c1ff-4ce0-af9c-9aa77ac3ea3d"
+      }
+    },
+    {
+      "Kind": "default.cds_crf5c_testtable_forms",
+      "Namespace": "test table (フォーム)",
+      "Values": {
+        "情報": "274d4b22-554e-4c2c-96a4-d66f5618aa7b"
+      }
+    },
+    {
+      "Kind": "default.cds_crf5c_aa_forms",
+      "Namespace": "aa (フォーム)",
+      "Values": {
+        "情報": "0c1b4f80-9c69-46c7-8454-e1b7cc0f8e0e"
+      }
+    }
+  ]
+}

@@ -1,0 +1,96 @@
+[
+  {
+    "DisplayName": "受験履歴管理台帳 (ビュー)",
+    "Name": "_crf5c_jukenrirekikanridaicho_views",
+    "RelatedEntityName": "受験履歴管理台帳",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "0bd280b6-a953-4a84-b931-072a04f4afaa": "非アクティブな受験履歴管理台帳",
+      "45bc039c-3479-4856-a343-ec5bd7eb2ea4": "受験履歴管理台帳検索ダイアログ ビュー",
+      "88c4b607-5533-4d9f-9b49-ec77f4b3868c": "受験履歴管理台帳関連ビュー",
+      "95fdef23-15e9-49fd-9a99-9a6caedda192": "受験履歴管理台帳の高度な検索ビュー",
+      "d596ab72-7c8e-4512-ad3b-78cadad99601": "アクティブな受験履歴管理台帳"
+    }
+  },
+  {
+    "DisplayName": "状態 (受験履歴管理台帳)",
+    "Name": "crf5c_jukenrirekikanridaicho_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "アクティブ",
+      "1": "非アクティブ"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "受験履歴管理台帳"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "受験履歴管理台帳",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "ステータス (受験履歴管理台帳)",
+    "Name": "crf5c_jukenrirekikanridaicho_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "アクティブ",
+      "2": "非アクティブ"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "受験履歴管理台帳"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "受験履歴管理台帳",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "crf5c_jukenrirekikanridaichos",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "crf5c_jukenrirekikanridaicho",
+    "MaxGetRowsCount": 500,
+    "Name": "受験履歴管理台帳",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "所有者",
+      "createdby": "作成者",
+      "createdon": "作成日",
+      "createdonbehalfby": "作成者 (代理)",
+      "crf5c_jugyoinno": "従業員No",
+      "crf5c_jukenrirekiid": "受験履歴ID",
+      "crf5c_jukenrirekikanridaicho_AsyncOperations": "システム ジョブ ",
+      "crf5c_jukenrirekikanridaicho_BulkDeleteFailures": "一括削除の失敗 ",
+      "crf5c_jukenrirekikanridaicho_PrincipalObjectAttributeAccesses": "フィールド共有 ",
+      "crf5c_jukenrirekikanridaicho_ProcessSession": "プロセス セッション",
+      "crf5c_jukenrirekikanridaichoid": "受験履歴管理台帳",
+      "crf5c_name": "Name",
+      "crf5c_shikakucode": "資格コード",
+      "importsequencenumber": "インポート シーケンス番号",
+      "modifiedby": "修正者",
+      "modifiedon": "修正日",
+      "modifiedonbehalfby": "修正者 (代理)",
+      "overriddencreatedon": "レコード作成日",
+      "owningbusinessunit": "所属部署",
+      "owningteam": "所有チーム",
+      "owninguser": "所有ユーザー",
+      "statecode": "状態",
+      "statuscode": "ステータス",
+      "timezoneruleversionnumber": "タイム ゾーン規則のバージョン番号",
+      "utcconversiontimezonecode": "UTC 変換タイム ゾーン コード",
+      "versionnumber": "バージョン番号"
+    },
+    "PreferredName": "受験履歴管理台帳",
+    "Type": "NativeCDSDataSourceInfo"
+  }
+]

@@ -1,0 +1,9 @@
+[
+  {
+    "IsComponentScoped": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "Name": "colキャリア台帳_自分のデータのみ",
+    "Type": "CollectionDataSourceInfo"
+  }
+]

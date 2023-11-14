@@ -1,0 +1,10 @@
+[
+  {
+    "ApiId": "/providers/microsoft.powerapps/apis/shared_logicflows",
+    "FlowNameId": "cbec0793-60ab-40a5-a63a-2246cdc35278",
+    "Name": "中間ファイル生成_親フロー",
+    "ServiceKind": "ConnectedWadl",
+    "Type": "ServiceInfo",
+    "WorkflowEntityId": "fd34a831-8f6d-ee11-9ae7-6045bd648516"
+  }
+]

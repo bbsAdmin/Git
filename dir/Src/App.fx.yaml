@@ -1,0 +1,178 @@
+App As appinfo:
+    BackEnabled: =false
+    OnStart: |-
+        =
+        //ログインユーザー情報取得
+        Set(
+            gbluser,
+            Office365ユーザー.MyProfileV2()
+        );
+        //ログインユーザーのメールアドレスをキーとして、「従業員情報」テーブルから従業員Noを取得
+        Set(
+            gbl従業員No,
+            LookUp(
+                従業員情報,
+                メールアドレス = gbluser.mail,
+                '従業員No.'
+            )
+        );
+        //ログインユーザーの従業員Noをキーとして、「受験履歴管理台帳」テーブルからデータを絞り込む（絞り込んだデータを「col受験履歴管理台帳」コレクションに格納する。※最大2,000件まで格納可能）
+        ClearCollect(
+            col受験履歴管理台帳,
+            Filter(
+                受験履歴管理台帳,
+                従業員No = gbl従業員No
+            )
+        );
+        //ログインユーザーの従業員Noをキーとして、「実務経験紐づけ台帳」テーブルからデータを絞り込む（絞り込んだデータを「col実務経験紐づけ台帳」コレクションに格納する。※最大2,000件まで格納可能）
+        ClearCollect(
+            col実務経験紐づけ台帳,
+            Filter(
+                実務経験紐づけ台帳,
+                従業員No = gbl従業員No
+            )
+        );
+        //「col実務経験紐づけ台帳_受験履歴IDで絞り込み」コレクションを初期化する
+        Clear(col実務経験紐づけ台帳_受験履歴IDで絞り込み);
+        //「col受験履歴管理台帳」コレクションの受験履歴IDをキーとして、「col実務経験紐づけ台帳」コレクションからデータを絞り込む（絞り込んだデータを「col実務経験紐づけ台帳_受験履歴IDで絞り込み」コレクションに格納する）
+        ForAll(
+            Sequence(CountRows(col受験履歴管理台帳)),
+            Collect(
+                col実務経験紐づけ台帳_受験履歴IDで絞り込み,
+                Filter(
+                    col実務経験紐づけ台帳,
+                    受験履歴ID = Index(
+                        col受験履歴管理台帳,
+                        Value
+                    ).受験履歴ID
+                )
+            )
+        );
+        //ログインユーザーの従業員Noをキーとして、「キャリア台帳」テーブルからデータを絞り込む（絞り込んだデータを「colキャリア台帳_自分のデータのみ」コレクションに格納する。※最大2,000件まで格納可能）
+        ClearCollect(
+            colキャリア台帳_自分のデータのみ,
+            Filter(
+                キャリア台帳,
+                従業員No = gbl従業員No
+            )
+        );
+        //「colキャリア台帳_使用しているキャリアID」コレクションを初期化する
+        Clear(colキャリア台帳_使用しているキャリアID);
+        //「col実務経験紐づけ台帳_受験履歴IDで絞り込み」コレクションのキャリアIDをキーとして、「colキャリア台帳_自分のデータのみ」コレクションからデータを絞り込む（絞り込んだデータを、「colキャリア台帳_使用しているキャリアID」コレクションに格納する）
+        ForAll(
+            Sequence(CountRows(col実務経験紐づけ台帳_受験履歴IDで絞り込み)),
+            Collect(
+                colキャリア台帳_使用しているキャリアID,
+                Filter(
+                    colキャリア台帳_自分のデータのみ,
+                    キャリアID = Index(
+                        col実務経験紐づけ台帳_受験履歴IDで絞り込み,
+                        Value
+                    ).キャリアID
+                )
+            )
+        );
+        //「colキャリア台帳_使用していないキャリアID」コレクションを初期化する
+        Clear(colキャリア台帳_使用していないキャリアID);
+        //「colキャリア台帳_自分のデータのみ」コレクションのキャリアIDをキーとして、「colキャリア台帳_自分のデータのみ」コレクションから「colキャリア台帳_使用しているキャリアID」コレクションに含まれていないキャリアIDを絞り込む（絞り込んだデータを、「colキャリア台帳_使用していないキャリアID」コレクションに格納する）
+        ForAll(
+            Sequence(CountRows(colキャリア台帳_自分のデータのみ)),
+            Collect(
+                colキャリア台帳_使用していないキャリアID,
+                If(
+                    Not(
+                        Index(
+                            colキャリア台帳_自分のデータのみ,
+                            Value
+                        ).キャリアID in colキャリア台帳_使用しているキャリアID.キャリアID
+                    ),
+                    Index(
+                        colキャリア台帳_自分のデータのみ,
+                        Value
+                    ).キャリアID
+                )
+            )
+        );
+        //「colキャリア台帳_使用していないキャリアID」コレクションから、キャリアIDが空欄であるレコードを削除する
+        RemoveIf(
+            colキャリア台帳_使用していないキャリアID,
+            IsBlank(Value)
+        );
+        //「colキャリア台帳_表示用」コレクションを初期化する
+        Clear(colキャリア台帳_表示用);
+        //「colキャリア台帳_使用していないキャリアID」コレクションのキャリアIDをキーとして、「colキャリア台帳_自分のデータのみ」コレクションからデータを絞り込む（絞り込んだデータを、「colキャリア台帳_表示用」コレクションに格納する）
+        ForAll(
+            Sequence(CountRows(colキャリア台帳_使用していないキャリアID)),
+            Collect(
+                colキャリア台帳_表示用,
+                Filter(
+                    colキャリア台帳_自分のデータのみ,
+                    キャリアID = Index(
+                        colキャリア台帳_使用していないキャリアID,
+                        Value
+                    ).Value
+                )
+            )
+        );
+        /*
+        ClearCollect(
+            col資格,
+            SortByColumns(資格,"crf5c_shikakucode",SortOrder.Ascending,"crf5c_shikakuname",SortOrder.Ascending,"crf5c_dosyu")
+        );
+        Clear(col資格_受験履歴管理台帳にない資格コード);
+        ForAll(
+            Sequence(CountRows(col資格)),
+            Collect(
+                col資格_受験履歴管理台帳にない資格コード,
+                If(
+                    Not(
+                        Index(
+                            col資格,
+                            Value
+                        ).資格コード in col受験履歴管理台帳.資格コード
+                    ),
+                    Index(
+                        col資格,
+                        Value
+                    ).資格コード
+                )
+            )
+        );
+        //「colキャリア台帳_使用していないキャリアID」コレクションから、キャリアIDが空欄であるレコードを削除する
+        RemoveIf(
+            col資格_受験履歴管理台帳にない資格コード,
+            IsBlank(Value)
+        );
+        //「colキャリア台帳_表示用」コレクションを初期化する
+        Clear(col資格_表示用);
+        //「colキャリア台帳_使用していないキャリアID」コレクションのキャリアIDをキーとして、「colキャリア台帳_自分のデータのみ」コレクションから絞り込んだデータを、「colキャリア台帳_表示用」コレクションに格納する。
+        ForAll(
+            Sequence(CountRows(col資格_受験履歴管理台帳にない資格コード)),
+            Collect(
+                col資格_表示用,
+                Filter(
+                    col資格,
+                    資格コード = Index(
+                        col資格_受験履歴管理台帳にない資格コード,
+                        Value
+                    ).Value
+                )
+            )
+        );
+        */
+    Theme: =PowerAppsTheme
+
+    Host As hostControl.DefaultHostControlVariant:
+        OnCancel: =false
+        OnEdit: =false
+        OnNew: =false
+        OnSave: =false
+        OnView: =false
+
+    Teams As hostControl.TeamsHostControlVariant:
+        OnCancel: =false
+        OnEdit: =false
+        OnNew: =false
+        OnSave: =false
+        OnView: =false
+

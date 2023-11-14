@@ -1,0 +1,120 @@
+Screen1 As screen:
+    LoadingSpinnerColor: =RGBA(98, 100, 167, 1)
+
+    Button2_2 As ボタン:
+        BorderColor: =
+        DisabledBorderColor: =
+        DisabledFillColor: =
+        DisabledTextColor: =
+        DisplayMode: =DisplayMode.Edit
+        FillColor: =
+        Height: =32
+        HoverBorderColor: =
+        HoverFillColor: =
+        HoverTextColor: =
+        OnSelect: |-
+            =Set(gbl従業員No,TextBox2_7.Value);
+            Set(gbl氏名,TextBox2_8.Value);
+            Set('gbl氏名(カナ)',TextBox2_9.Value);
+            Set(gbl入社年月,TextBox2_10.Value);
+            Set(gbl入社区分,TextBox2_11.Value);
+            Set(gbl従業員区分,TextBox2_12.Value);
+            
+            //SharePointにアイテムを追加してメールを送信する.Run(gbl従業員No,gbl氏名,'gbl氏名(カナ)',gbl入社年月,gbl入社区分,gbl従業員区分,gbl従業員No,gbl氏名,'gbl氏名(カナ)',gbl入社年月,gbl入社区分,gbl従業員区分);
+            Set(mail,"testnakamura004@bbsdsmigtest.onmicrosoft.com");
+            中間ファイル生成_親フロー.Run(gbl従業員No,gbl氏名,'gbl氏名(カナ)',gbl入社年月,gbl入社区分,gbl従業員区分,mail)
+        PCFTeamsTheme: ="default"
+        PressedBorderColor: =
+        PressedFillColor: =
+        PressedTextColor: =
+        Text: ="中間ファイルの作成"
+        TextColor: =
+        Width: =155
+        X: =524
+        Y: =349
+        ZIndex: =5
+
+    "TextBox2_7 As 'テキスト ボックス'":
+        ColorBackground: =
+        ColorText: =
+        DisplayMode: =DisplayMode.Edit
+        Height: =22
+        OnChange: =
+        OnSelect: =
+        PCFTeamsTheme: ="default"
+        Value: =""
+        Width: =214
+        X: =495
+        Y: =121
+        ZIndex: =6
+
+    "TextBox2_8 As 'テキスト ボックス'":
+        ColorBackground: =
+        ColorText: =
+        DisplayMode: =DisplayMode.Edit
+        Height: =22
+        OnChange: =
+        OnSelect: =
+        PCFTeamsTheme: ="default"
+        Value: =""
+        Width: =214
+        X: =495
+        Y: =155
+        ZIndex: =7
+
+    "TextBox2_9 As 'テキスト ボックス'":
+        ColorBackground: =
+        ColorText: =
+        DisplayMode: =DisplayMode.Edit
+        Height: =22
+        OnChange: =
+        OnSelect: =
+        PCFTeamsTheme: ="default"
+        Value: =""
+        Width: =214
+        X: =495
+        Y: =189
+        ZIndex: =8
+
+    "TextBox2_10 As 'テキスト ボックス'":
+        ColorBackground: =
+        ColorText: =
+        DisplayMode: =DisplayMode.Edit
+        Height: =22
+        OnChange: =
+        OnSelect: =
+        PCFTeamsTheme: ="default"
+        Value: =""
+        Width: =214
+        X: =495
+        Y: =219
+        ZIndex: =9
+
+    "TextBox2_11 As 'テキスト ボックス'":
+        ColorBackground: =
+        ColorText: =
+        DisplayMode: =DisplayMode.Edit
+        Height: =22
+        OnChange: =
+        OnSelect: =
+        PCFTeamsTheme: ="default"
+        Value: =""
+        Width: =214
+        X: =495
+        Y: =251
+        ZIndex: =10
+
+    "TextBox2_12 As 'テキスト ボックス'":
+        ColorBackground: =
+        ColorText: =
+        DisplayMode: =DisplayMode.Edit
+        Height: =22
+        OnChange: =
+        OnSelect: =
+        PCFTeamsTheme: ="default"
+        Value: =""
+        Width: =214
+        X: =495
+        Y: =283
+        ZIndex: =11
+

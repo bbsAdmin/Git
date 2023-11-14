@@ -1,0 +1,300 @@
+Screen2 As screen:
+    LoadingSpinnerColor: =RGBA(98, 100, 167, 1)
+
+    Gallery3 As gallery.BrowseLayout_Vertical_ThreeTextVariant_pcfCore:
+        BorderThickness: =1
+        DelayItemLoading: =true
+        FocusedBorderColor: =RGBA(98, 100, 167, 1)
+        FocusedBorderThickness: =2
+        Height: =501
+        Items: =colキャリア台帳_表示用
+        Layout: =Layout.Vertical
+        LoadingSpinner: =LoadingSpinner.Data
+        TemplatePadding: =0
+        TemplateSize: =111
+        X: =364
+        Y: =188
+        ZIndex: =1
+
+        Rectangle4 As rectangle:
+            BorderColor: =RGBA(243, 242, 241, 1)
+            DisabledFill: =RGBA(0,0,0,0)
+            Fill: =RGBA(0,0,0,0)
+            FocusedBorderColor: =RGBA(98, 100, 167, 1)
+            Height: =Parent.TemplateHeight
+            HoverFill: =RGBA(0,0,0,0)
+            OnSelect: =Select(Parent)
+            PressedFill: =RGBA(0,0,0,0)
+            TabIndex: =0
+            Width: =Parent.TemplateWidth
+            ZIndex: =1
+
+        lbl件名番号 As ラベル:
+            Color: =
+            DisplayMode: =DisplayMode.Edit
+            FontSize: =9
+            FontWeight: =FontWeight.Normal
+            Height: =24
+            OnSelect: =Select(Parent)
+            PCFTeamsTheme: ="default"
+            TabIndex: =-1
+            Text: =ThisItem.件名番号
+            VerticalAlignment: =VerticalAlign.Top
+            Width: =lblキャリアID.Width
+            X: =lblキャリアID.X
+            Y: =67
+            ZIndex: =2
+
+        lbl従業員No As ラベル:
+            Color: =
+            DisplayMode: =DisplayMode.Edit
+            FontSize: =9
+            FontWeight: =FontWeight.Normal
+            Height: =24
+            OnSelect: =Select(Parent)
+            PCFTeamsTheme: ="default"
+            TabIndex: =-1
+            Text: =ThisItem.従業員No
+            VerticalAlignment: =VerticalAlign.Top
+            Width: =lblキャリアID.Width
+            X: =lblキャリアID.X
+            Y: =43
+            ZIndex: =3
+
+        lblキャリアID As ラベル:
+            Color: =
+            DisplayMode: =DisplayMode.Edit
+            FontSize: =10.5
+            FontWeight: =FontWeight.Semibold
+            Height: =24
+            OnSelect: =Select(Parent)
+            PCFTeamsTheme: ="default"
+            TabIndex: =-1
+            Text: =ThisItem.キャリアID
+            VerticalAlignment: =VerticalAlign.Top
+            Width: =501
+            X: =93
+            Y: =19
+            ZIndex: =4
+
+        Label1 As ラベル:
+            Color: =
+            DisplayMode: =DisplayMode.Edit
+            Height: =lblキャリアID.Height
+            OnSelect: =Select(Parent)
+            PCFTeamsTheme: ="default"
+            Text: ="キャリアID"
+            Width: =71
+            X: =5
+            Y: =lblキャリアID.Y
+            ZIndex: =5
+
+        Label1_1 As ラベル:
+            Color: =
+            DisplayMode: =DisplayMode.Edit
+            Height: =lbl従業員No.Height
+            OnSelect: =Select(Parent)
+            PCFTeamsTheme: ="default"
+            Text: ="従業員No"
+            Width: =71
+            X: =5
+            Y: =lbl従業員No.Y
+            ZIndex: =6
+
+        Label1_2 As ラベル:
+            Color: =
+            DisplayMode: =DisplayMode.Edit
+            Height: =lbl件名番号.Height
+            OnSelect: =Select(Parent)
+            PCFTeamsTheme: ="default"
+            Text: ="件名番号"
+            Width: =71
+            X: =5
+            Y: =lbl件名番号.Y
+            ZIndex: =7
+
+    "ComboBox2 As 'コンボ ボックス'.pcfdataset":
+        DisplayMode: =DisplayMode.Edit
+        Height: =32
+        Items: =資格
+        OnChange: |
+            =/*
+            ClearCollect(
+                col資格,
+                SortByColumns(
+                    資格,
+                    "crf5c_shikakucode",
+                    SortOrder.Ascending,
+                    "crf5c_shikakuname",
+                    SortOrder.Ascending,
+                    "crf5c_dosyu"
+                )
+            );
+            */
+            //ログインユーザーの従業員Noをキーとして、「受験履歴管理台帳」テーブルからデータを絞り込む（絞り込んだデータを「col受験履歴管理台帳」コレクションに格納する。※最大2,000件まで格納可能）
+            ClearCollect(
+                col受験履歴管理台帳,
+                Filter(
+                    受験履歴管理台帳,
+                    従業員No = gbl従業員No
+                )
+            );
+            //
+            RemoveIf(
+                col受験履歴管理台帳,
+                資格コード = LookUp(
+                    資格,
+                    資格名 = ComboBox2.Selected.資格名,
+                    同種
+                )
+            );
+            //ログインユーザーの従業員Noをキーとして、「実務経験紐づけ台帳」テーブルからデータを絞り込む（絞り込んだデータを「col実務経験紐づけ台帳」コレクションに格納する。※最大2,000件まで格納可能）
+            ClearCollect(
+                col実務経験紐づけ台帳,
+                Filter(
+                    実務経験紐づけ台帳,
+                    従業員No = gbl従業員No
+                )
+            );
+            //「col実務経験紐づけ台帳_受験履歴IDで絞り込み」コレクションを初期化する
+            Clear(col実務経験紐づけ台帳_受験履歴IDで絞り込み);
+            //「col受験履歴管理台帳」コレクションの受験履歴IDをキーとして、「col実務経験紐づけ台帳」コレクションからデータを絞り込む（絞り込んだデータを「col実務経験紐づけ台帳_受験履歴IDで絞り込み」コレクションに格納する）
+            ForAll(
+                Sequence(CountRows(col受験履歴管理台帳)),
+                Collect(
+                    col実務経験紐づけ台帳_受験履歴IDで絞り込み,
+                    Filter(
+                        col実務経験紐づけ台帳,
+                        受験履歴ID = Index(
+                            col受験履歴管理台帳,
+                            Value
+                        ).受験履歴ID
+                    )
+                )
+            );
+            //ログインユーザーの従業員Noをキーとして、「キャリア台帳」テーブルからデータを絞り込む（絞り込んだデータを「colキャリア台帳_自分のデータのみ」コレクションに格納する。※最大2,000件まで格納可能）
+            ClearCollect(
+                colキャリア台帳_自分のデータのみ,
+                Filter(
+                    キャリア台帳,
+                    従業員No = gbl従業員No
+                )
+            );
+            //「colキャリア台帳_使用しているキャリアID」コレクションを初期化する
+            Clear(colキャリア台帳_使用しているキャリアID);
+            //「col実務経験紐づけ台帳_受験履歴IDで絞り込み」コレクションのキャリアIDをキーとして、「colキャリア台帳_自分のデータのみ」コレクションからデータを絞り込む（絞り込んだデータを、「colキャリア台帳_使用しているキャリアID」コレクションに格納する）
+            ForAll(
+                Sequence(CountRows(col実務経験紐づけ台帳_受験履歴IDで絞り込み)),
+                Collect(
+                    colキャリア台帳_使用しているキャリアID,
+                    Filter(
+                        colキャリア台帳_自分のデータのみ,
+                        キャリアID = Index(
+                            col実務経験紐づけ台帳_受験履歴IDで絞り込み,
+                            Value
+                        ).キャリアID
+                    )
+                )
+            );
+            //「colキャリア台帳_使用していないキャリアID」コレクションを初期化する
+            Clear(colキャリア台帳_使用していないキャリアID);
+            //「colキャリア台帳_自分のデータのみ」コレクションのキャリアIDをキーとして、「colキャリア台帳_自分のデータのみ」コレクションから「colキャリア台帳_使用しているキャリアID」コレクションに含まれていないキャリアIDを絞り込む（絞り込んだデータを、「colキャリア台帳_使用していないキャリアID」コレクションに格納する）
+            ForAll(
+                Sequence(CountRows(colキャリア台帳_自分のデータのみ)),
+                Collect(
+                    colキャリア台帳_使用していないキャリアID,
+                    If(
+                        Not(
+                            Index(
+                                colキャリア台帳_自分のデータのみ,
+                                Value
+                            ).キャリアID in colキャリア台帳_使用しているキャリアID.キャリアID
+                        ),
+                        Index(
+                            colキャリア台帳_自分のデータのみ,
+                            Value
+                        ).キャリアID
+                    )
+                )
+            );
+            //「colキャリア台帳_使用していないキャリアID」コレクションから、キャリアIDが空欄であるレコードを削除する
+            RemoveIf(
+                colキャリア台帳_使用していないキャリアID,
+                IsBlank(Value)
+            );
+            //「colキャリア台帳_表示用」コレクションを初期化する
+            Clear(colキャリア台帳_表示用);
+            //「colキャリア台帳_使用していないキャリアID」コレクションのキャリアIDをキーとして、「colキャリア台帳_自分のデータのみ」コレクションからデータを絞り込む（絞り込んだデータを、「colキャリア台帳_表示用」コレクションに格納する）
+            ForAll(
+                Sequence(CountRows(colキャリア台帳_使用していないキャリアID)),
+                Collect(
+                    colキャリア台帳_表示用,
+                    Filter(
+                        colキャリア台帳_自分のデータのみ,
+                        キャリアID = Index(
+                            colキャリア台帳_使用していないキャリアID,
+                            Value
+                        ).Value
+                    )
+                )
+            );
+        PCFTeamsTheme: ="default"
+        Width: =320
+        X: =524
+        Y: =69
+        ZIndex: =2
+
+        crf5c_shikakuname1 As pcfDataField.textualColumn:
+            FieldDisplayName: ="crf5c_shikakuname"
+            FieldName: ="crf5c_shikakuname"
+            FieldType: ="s"
+            FieldVariantName: ="textualColumn"
+            Order: =1
+            ZIndex: =8
+
+    Button1 As ボタン:
+        BorderColor: =
+        DisabledBorderColor: =
+        DisabledFillColor: =
+        DisabledTextColor: =
+        DisplayMode: =DisplayMode.Edit
+        FillColor: =
+        Height: =32
+        HoverBorderColor: =
+        HoverFillColor: =
+        HoverTextColor: =
+        OnSelect: =Navigate(Screen1)
+        PCFTeamsTheme: ="default"
+        PressedBorderColor: =
+        PressedFillColor: =
+        PressedTextColor: =
+        Text: ="Screen1へ"
+        TextColor: =
+        Width: =96
+        X: =43
+        Y: =69
+        ZIndex: =3
+
+    Button1_1 As ボタン:
+        BorderColor: =
+        DisabledBorderColor: =
+        DisabledFillColor: =
+        DisabledTextColor: =
+        DisplayMode: =DisplayMode.Edit
+        FillColor: =
+        Height: =32
+        HoverBorderColor: =
+        HoverFillColor: =
+        HoverTextColor: =
+        OnSelect: =Navigate(Screen3)
+        PCFTeamsTheme: ="default"
+        PressedBorderColor: =
+        PressedFillColor: =
+        PressedTextColor: =
+        Text: ="Screen3へ"
+        TextColor: =
+        Width: =96
+        X: =43
+        Y: =156
+        ZIndex: =4
+

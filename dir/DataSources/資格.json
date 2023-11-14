@@ -1,0 +1,98 @@
+[
+  {
+    "DisplayName": "資格 (ビュー)",
+    "Name": "_crf5c_shikaku_views",
+    "RelatedEntityName": "資格",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "16785bed-57f9-484a-b358-e8e067bd53a6": "非アクティブな資格",
+      "5e318389-dad4-4024-b9f9-6c5b0fd690e5": "アクティブな資格",
+      "9cd17783-1164-4978-846c-b446d634d5ec": "資格検索ダイアログ ビュー",
+      "a18f81ad-bd91-46a0-a20d-4492c6991325": "資格関連ビュー",
+      "e080c7a3-5b7e-4f1d-b425-7f90e2529315": "資格の高度な検索ビュー"
+    }
+  },
+  {
+    "DisplayName": "状態 (資格)",
+    "Name": "crf5c_shikaku_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "アクティブ",
+      "1": "非アクティブ"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "資格"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "資格",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "ステータス (資格)",
+    "Name": "crf5c_shikaku_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "アクティブ",
+      "2": "非アクティブ"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "資格"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "資格",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "crf5c_shikakus",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "crf5c_shikaku",
+    "MaxGetRowsCount": 500,
+    "Name": "資格",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "所有者",
+      "createdby": "作成者",
+      "createdon": "作成日",
+      "createdonbehalfby": "作成者 (代理)",
+      "crf5c_chohukuflg": "重複フラグ",
+      "crf5c_dosyu": "同種",
+      "crf5c_kaikyu": "階級",
+      "crf5c_name": "Name",
+      "crf5c_shikaku_AsyncOperations": "システム ジョブ ",
+      "crf5c_shikaku_BulkDeleteFailures": "一括削除の失敗 ",
+      "crf5c_shikaku_PrincipalObjectAttributeAccesses": "フィールド共有 ",
+      "crf5c_shikaku_ProcessSession": "プロセス セッション",
+      "crf5c_shikakucode": "資格コード",
+      "crf5c_shikakuid": "資格",
+      "crf5c_shikakuname": "資格名",
+      "importsequencenumber": "インポート シーケンス番号",
+      "modifiedby": "修正者",
+      "modifiedon": "修正日",
+      "modifiedonbehalfby": "修正者 (代理)",
+      "overriddencreatedon": "レコード作成日",
+      "owningbusinessunit": "所属部署",
+      "owningteam": "所有チーム",
+      "owninguser": "所有ユーザー",
+      "statecode": "状態",
+      "statuscode": "ステータス",
+      "timezoneruleversionnumber": "タイム ゾーン規則のバージョン番号",
+      "utcconversiontimezonecode": "UTC 変換タイム ゾーン コード",
+      "versionnumber": "バージョン番号"
+    },
+    "PreferredName": "資格",
+    "Type": "NativeCDSDataSourceInfo"
+  }
+]
