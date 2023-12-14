@@ -12,6 +12,7 @@ Screen1 As screen:
         HoverBorderColor: =
         HoverFillColor: =
         HoverTextColor: =
+        OnChange: =false
         OnSelect: |-
             =Set(gbl従業員No,TextBox2_7.Value);
             Set(gbl氏名,TextBox2_8.Value);
@@ -19,10 +20,17 @@ Screen1 As screen:
             Set(gbl入社年月,TextBox2_10.Value);
             Set(gbl入社区分,TextBox2_11.Value);
             Set(gbl従業員区分,TextBox2_12.Value);
+            Set(gbl現事業所,TextBox2_13.Value);
+            Set(gbl現所属,TextBox2_14.Value);
+            Set(gbl卒業年月日,TextBox2_15.Value);
+            Set(gbl教育機関,TextBox2_16.Value);
+            Set(gbl教育機関名,TextBox2_17.Value);
+            Set(gbl学部名,TextBox2_18.Value);
+            Set(gbl学科名,TextBox2_19.Value);
             
             //SharePointにアイテムを追加してメールを送信する.Run(gbl従業員No,gbl氏名,'gbl氏名(カナ)',gbl入社年月,gbl入社区分,gbl従業員区分,gbl従業員No,gbl氏名,'gbl氏名(カナ)',gbl入社年月,gbl入社区分,gbl従業員区分);
-            Set(mail,"testnakamura004@bbsdsmigtest.onmicrosoft.com");
-            中間ファイル生成_親フロー.Run(gbl従業員No,gbl氏名,'gbl氏名(カナ)',gbl入社年月,gbl入社区分,gbl従業員区分,mail)
+            //Set(mail,"testnakamura004@bbsdsmigtest.onmicrosoft.com");
+            中間ファイル生成_親フロー.Run(gbl従業員No,gbl氏名,'gbl氏名(カナ)',gbl入社年月,gbl入社区分,gbl従業員区分,gbl現事業所,gbl現所属,gbl卒業年月日,gbl教育機関,gbl教育機関名,gbl学部名,gbl学科名)
         PCFTeamsTheme: ="default"
         PressedBorderColor: =
         PressedFillColor: =
@@ -30,8 +38,8 @@ Screen1 As screen:
         Text: ="中間ファイルの作成"
         TextColor: =
         Width: =155
-        X: =524
-        Y: =349
+        X: =577
+        Y: =379
         ZIndex: =5
 
     "TextBox2_7 As 'テキスト ボックス'":
@@ -44,8 +52,8 @@ Screen1 As screen:
         PCFTeamsTheme: ="default"
         Value: =""
         Width: =214
-        X: =495
-        Y: =121
+        X: =188
+        Y: =120
         ZIndex: =6
 
     "TextBox2_8 As 'テキスト ボックス'":
@@ -58,8 +66,8 @@ Screen1 As screen:
         PCFTeamsTheme: ="default"
         Value: =""
         Width: =214
-        X: =495
-        Y: =155
+        X: =188
+        Y: =154
         ZIndex: =7
 
     "TextBox2_9 As 'テキスト ボックス'":
@@ -72,8 +80,8 @@ Screen1 As screen:
         PCFTeamsTheme: ="default"
         Value: =""
         Width: =214
-        X: =495
-        Y: =189
+        X: =188
+        Y: =188
         ZIndex: =8
 
     "TextBox2_10 As 'テキスト ボックス'":
@@ -86,8 +94,8 @@ Screen1 As screen:
         PCFTeamsTheme: ="default"
         Value: =""
         Width: =214
-        X: =495
-        Y: =219
+        X: =188
+        Y: =218
         ZIndex: =9
 
     "TextBox2_11 As 'テキスト ボックス'":
@@ -100,8 +108,8 @@ Screen1 As screen:
         PCFTeamsTheme: ="default"
         Value: =""
         Width: =214
-        X: =495
-        Y: =251
+        X: =188
+        Y: =250
         ZIndex: =10
 
     "TextBox2_12 As 'テキスト ボックス'":
@@ -114,7 +122,260 @@ Screen1 As screen:
         PCFTeamsTheme: ="default"
         Value: =""
         Width: =214
-        X: =495
-        Y: =283
+        X: =188
+        Y: =282
         ZIndex: =11
+
+    Label2 As ラベル:
+        DisplayMode: =DisplayMode.Edit
+        Height: =22
+        OnChange: =false
+        PCFTeamsTheme: ="default"
+        Text: ="従業員No"
+        Width: =85
+        X: =103
+        Y: =120
+        ZIndex: =12
+
+    Label2_1 As ラベル:
+        Color: =
+        DisplayMode: =DisplayMode.Edit
+        Height: =22
+        OnChange: =false
+        PCFTeamsTheme: ="default"
+        Text: ="名前"
+        Width: =85
+        X: =103
+        Y: =154
+        ZIndex: =13
+
+    Label2_2 As ラベル:
+        Color: =
+        DisplayMode: =DisplayMode.Edit
+        Height: =22
+        OnChange: =false
+        PCFTeamsTheme: ="default"
+        Text: ="名前（カナ）"
+        Width: =85
+        X: =103
+        Y: =188
+        ZIndex: =14
+
+    Label2_3 As ラベル:
+        Color: =
+        DisplayMode: =DisplayMode.Edit
+        Height: =22
+        OnChange: =false
+        PCFTeamsTheme: ="default"
+        Text: ="入社年月"
+        Width: =85
+        X: =103
+        Y: =219
+        ZIndex: =15
+
+    Label2_4 As ラベル:
+        Color: =
+        DisplayMode: =DisplayMode.Edit
+        Height: =22
+        OnChange: =false
+        PCFTeamsTheme: ="default"
+        Text: ="入社区分"
+        Width: =85
+        X: =103
+        Y: =250
+        ZIndex: =16
+
+    Label2_5 As ラベル:
+        Color: =
+        DisplayMode: =DisplayMode.Edit
+        Height: =22
+        OnChange: =false
+        PCFTeamsTheme: ="default"
+        Text: ="従業員"
+        Width: =85
+        X: =103
+        Y: =282
+        ZIndex: =17
+
+    "TextBox2_13 As 'テキスト ボックス'":
+        ColorBackground: =
+        ColorText: =
+        DisplayMode: =DisplayMode.Edit
+        Height: =22
+        OnChange: =
+        OnSelect: =
+        PCFTeamsTheme: ="default"
+        Value: =""
+        Width: =214
+        X: =566
+        Y: =120
+        ZIndex: =18
+
+    "TextBox2_14 As 'テキスト ボックス'":
+        ColorBackground: =
+        ColorText: =
+        DisplayMode: =DisplayMode.Edit
+        Height: =22
+        OnChange: =
+        OnSelect: =
+        PCFTeamsTheme: ="default"
+        Value: =""
+        Width: =214
+        X: =566
+        Y: =154
+        ZIndex: =19
+
+    "TextBox2_15 As 'テキスト ボックス'":
+        ColorBackground: =
+        ColorText: =
+        DisplayMode: =DisplayMode.Edit
+        Height: =22
+        OnChange: =
+        OnSelect: =
+        PCFTeamsTheme: ="default"
+        Value: =""
+        Width: =214
+        X: =992
+        Y: =120
+        ZIndex: =20
+
+    "TextBox2_16 As 'テキスト ボックス'":
+        ColorBackground: =
+        ColorText: =
+        DisplayMode: =DisplayMode.Edit
+        Height: =22
+        OnChange: =
+        OnSelect: =
+        PCFTeamsTheme: ="default"
+        Value: =""
+        Width: =214
+        X: =992
+        Y: =150
+        ZIndex: =21
+
+    "TextBox2_17 As 'テキスト ボックス'":
+        ColorBackground: =
+        ColorText: =
+        DisplayMode: =DisplayMode.Edit
+        Height: =22
+        OnChange: =
+        OnSelect: =
+        PCFTeamsTheme: ="default"
+        Value: =""
+        Width: =214
+        X: =992
+        Y: =182
+        ZIndex: =22
+
+    "TextBox2_18 As 'テキスト ボックス'":
+        ColorBackground: =
+        ColorText: =
+        DisplayMode: =DisplayMode.Edit
+        Height: =22
+        OnChange: =
+        OnSelect: =
+        PCFTeamsTheme: ="default"
+        Value: =""
+        Width: =214
+        X: =992
+        Y: =214
+        ZIndex: =23
+
+    Label2_6 As ラベル:
+        Color: =
+        DisplayMode: =DisplayMode.Edit
+        Height: =22
+        OnChange: =false
+        PCFTeamsTheme: ="default"
+        Text: ="現事業所"
+        Width: =85
+        X: =481
+        Y: =120
+        ZIndex: =24
+
+    Label2_7 As ラベル:
+        Color: =
+        DisplayMode: =DisplayMode.Edit
+        Height: =22
+        OnChange: =false
+        PCFTeamsTheme: ="default"
+        Text: ="現所属"
+        Width: =85
+        X: =481
+        Y: =154
+        ZIndex: =25
+
+    Label2_8 As ラベル:
+        Color: =
+        DisplayMode: =DisplayMode.Edit
+        Height: =22
+        OnChange: =false
+        PCFTeamsTheme: ="default"
+        Text: ="卒業年月日"
+        Width: =85
+        X: =907
+        Y: =120
+        ZIndex: =26
+
+    Label2_9 As ラベル:
+        Color: =
+        DisplayMode: =DisplayMode.Edit
+        Height: =22
+        OnChange: =false
+        PCFTeamsTheme: ="default"
+        Text: ="教育機関"
+        Width: =85
+        X: =907
+        Y: =151
+        ZIndex: =27
+
+    Label2_10 As ラベル:
+        Color: =
+        DisplayMode: =DisplayMode.Edit
+        Height: =22
+        OnChange: =false
+        PCFTeamsTheme: ="default"
+        Text: ="教育機関名"
+        Width: =85
+        X: =907
+        Y: =182
+        ZIndex: =28
+
+    Label2_11 As ラベル:
+        Color: =
+        DisplayMode: =DisplayMode.Edit
+        Height: =22
+        OnChange: =false
+        PCFTeamsTheme: ="default"
+        Text: ="学部名"
+        Width: =85
+        X: =907
+        Y: =214
+        ZIndex: =29
+
+    "TextBox2_19 As 'テキスト ボックス'":
+        ColorBackground: =
+        ColorText: =
+        DisplayMode: =DisplayMode.Edit
+        Height: =22
+        OnChange: =
+        OnSelect: =
+        PCFTeamsTheme: ="default"
+        Value: =""
+        Width: =214
+        X: =992
+        Y: =248
+        ZIndex: =30
+
+    Label2_12 As ラベル:
+        Color: =
+        DisplayMode: =DisplayMode.Edit
+        Height: =22
+        OnChange: =false
+        PCFTeamsTheme: ="default"
+        Text: ="学科名"
+        Width: =85
+        X: =907
+        Y: =248
+        ZIndex: =31
 

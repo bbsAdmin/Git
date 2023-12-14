@@ -35,6 +35,7 @@ Screen2 As screen:
             FontSize: =9
             FontWeight: =FontWeight.Normal
             Height: =24
+            OnChange: =false
             OnSelect: =Select(Parent)
             PCFTeamsTheme: ="default"
             TabIndex: =-1
@@ -51,6 +52,7 @@ Screen2 As screen:
             FontSize: =9
             FontWeight: =FontWeight.Normal
             Height: =24
+            OnChange: =false
             OnSelect: =Select(Parent)
             PCFTeamsTheme: ="default"
             TabIndex: =-1
@@ -67,6 +69,7 @@ Screen2 As screen:
             FontSize: =10.5
             FontWeight: =FontWeight.Semibold
             Height: =24
+            OnChange: =false
             OnSelect: =Select(Parent)
             PCFTeamsTheme: ="default"
             TabIndex: =-1
@@ -81,6 +84,7 @@ Screen2 As screen:
             Color: =
             DisplayMode: =DisplayMode.Edit
             Height: =lblキャリアID.Height
+            OnChange: =false
             OnSelect: =Select(Parent)
             PCFTeamsTheme: ="default"
             Text: ="キャリアID"
@@ -93,6 +97,7 @@ Screen2 As screen:
             Color: =
             DisplayMode: =DisplayMode.Edit
             Height: =lbl従業員No.Height
+            OnChange: =false
             OnSelect: =Select(Parent)
             PCFTeamsTheme: ="default"
             Text: ="従業員No"
@@ -105,6 +110,7 @@ Screen2 As screen:
             Color: =
             DisplayMode: =DisplayMode.Edit
             Height: =lbl件名番号.Height
+            OnChange: =false
             OnSelect: =Select(Parent)
             PCFTeamsTheme: ="default"
             Text: ="件名番号"
@@ -263,6 +269,7 @@ Screen2 As screen:
         HoverBorderColor: =
         HoverFillColor: =
         HoverTextColor: =
+        OnChange: =false
         OnSelect: =Navigate(Screen1)
         PCFTeamsTheme: ="default"
         PressedBorderColor: =
@@ -286,6 +293,7 @@ Screen2 As screen:
         HoverBorderColor: =
         HoverFillColor: =
         HoverTextColor: =
+        OnChange: =false
         OnSelect: =Navigate(Screen3)
         PCFTeamsTheme: ="default"
         PressedBorderColor: =

@@ -8,7 +8,13 @@
       <string name="ManualTriggerInput_text_3_def" />
       <string name="ManualTriggerInput_text_4_def" />
       <string name="ManualTriggerInput_text_5_def" />
-      <string name="ManualTriggerInput_text_6_def" />
+      <string name="ManualTriggerInput_text_7_def" />
+      <string name="ManualTriggerInput_text_8_def" />
+      <string name="ManualTriggerInput_text_9_def" />
+      <string name="ManualTriggerInput_text_10_def" />
+      <string name="ManualTriggerInput_text_11_def" />
+      <string name="ManualTriggerInput_text_12_def" />
+      <string name="ManualTriggerInput_text_13_def" />
       <object name="ManualTriggerInput">
         <property name="text" type="string" />
         <property name="text_1" type="string" />
@@ -16,7 +22,13 @@
         <property name="text_3" type="string" />
         <property name="text_4" type="string" />
         <property name="text_5" type="string" />
-        <property name="text_6" type="string" />
+        <property name="text_7" type="string" />
+        <property name="text_8" type="string" />
+        <property name="text_9" type="string" />
+        <property name="text_10" type="string" />
+        <property name="text_11" type="string" />
+        <property name="text_12" type="string" />
+        <property name="text_13" type="string" />
       </object>
     </jsonTypes>
   </grammars>
@@ -48,8 +60,26 @@
             <param style="plain" name="text_5" path="/text_5" type="xs:string" required="true">
               <doc title="従業員" />
             </param>
-            <param style="plain" name="text_6" path="/text_6" type="xs:string" required="true">
-              <doc title="受験者" />
+            <param style="plain" name="text_7" path="/text_7" type="xs:string" required="true">
+              <doc title="現事業所" />
+            </param>
+            <param style="plain" name="text_8" path="/text_8" type="xs:string" required="true">
+              <doc title="現所属" />
+            </param>
+            <param style="plain" name="text_9" path="/text_9" type="xs:string" required="true">
+              <doc title="卒業年月日" />
+            </param>
+            <param style="plain" name="text_10" path="/text_10" type="xs:string" required="true">
+              <doc title="教育機関" />
+            </param>
+            <param style="plain" name="text_11" path="/text_11" type="xs:string" required="true">
+              <doc title="教育機関名" />
+            </param>
+            <param style="plain" name="text_12" path="/text_12" type="xs:string" required="true">
+              <doc title="学部名" />
+            </param>
+            <param style="plain" name="text_13" path="/text_13" type="xs:string" required="true">
+              <doc title="学科名" />
             </param>
           </representation>
         </request>

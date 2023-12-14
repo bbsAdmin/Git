@@ -25,7 +25,7 @@
     "LastModifiedTimestamp": "0",
     "Name": "gallery",
     "OverridableProperties": {},
-    "Version": "2.13.2"
+    "Version": "2.14.0"
   },
   "galleryTemplate": {
     "CustomGroupControlTemplateName": "",
@@ -135,7 +135,7 @@
             }
           ]
         },
-        "Version": "1.335"
+        "Version": "1.336"
       },
       "ThisChannel": {
         "Type": {
@@ -163,7 +163,7 @@
             }
           ]
         },
-        "Version": "1.335"
+        "Version": "1.336"
       },
       "ThisMeeting": {
         "Type": {
@@ -179,7 +179,7 @@
             }
           ]
         },
-        "Version": "1.335"
+        "Version": "1.336"
       },
       "ThisTeam": {
         "Type": {
@@ -207,7 +207,7 @@
             }
           ]
         },
-        "Version": "1.335"
+        "Version": "1.336"
       }
     },
     "PCFDynamicSchemaForIRRetrieval": {},
